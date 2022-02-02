@@ -1,0 +1,44 @@
+<!-- para incluir o header -->
+<%- include("../partials/header"); %>
+
+	<main class="container-md">
+		<section class="mb-5">
+			<div class="row">
+				<div class="col-md-6 mr-auto ml-auto">
+					<h1 class="mt-5 mb-5">Cadastrar Venda</h1>
+					<form action="/cadastrarVenda" method="POST">			
+						<div class="form-group mt-2">
+							<label for="valor_venda"> Valor total da venda </label>
+							<input class="form-control" type="text" name="valor_venda" id="valor_venda" placeholder="Ex: 50.00" required>
+						</div>
+						<div class="form-group mt-2">
+							<label for="cliente_venda"> Cliente </label>
+							<select name="cliente_venda" id="cliente_venda" class="form-control">
+								<% clientesLista.forEach(function(cliente){%>
+									<option value="<%=cliente.id_cliente %>"> <%= cliente.nome_cliente %> </option>
+								<% }) %>
+							</select>
+						</div>
+
+						<div class="form-group mt-2">
+							<label for="produto_venda"> Produto </label>
+							<select name="produto_venda" id="produto_venda" class="form-control">
+								<% produtosLista.forEach(function(produto){%>
+									<option value="<%=produto.id_prod %>"> <%= produto.desc_prod %> </option>
+								<% }) %>
+							</select>
+						</div>
+						
+						<div class="form-group mt-2">
+							<label for="quantidade_venda"> Quantidade </label>
+							<input class="form-control" type="text" name="quantidade_venda" id="quantidade_venda" placeholder="Ex: 3" required>
+						</div>
+
+						<button type="submit" class="btn btn-danger mt-3" id="btnCadastrar">Cadastrar</button>
+					</form>
+				</div>
+			</div>
+		</section>
+
+<!-- para incluir o footer -->
+<%- include("../partials/footer"); %>

@@ -1,0 +1,133 @@
+@font-face {
+	font-family: SourceSansPro-Light;
+	src: url(../fonte/SourceSansPro-Light.ttf);
+}
+
+a{
+	color: white;
+}
+
+body{
+	background-color: #e4e3cd;
+	font-family: SourceSansPro-Light;
+
+}
+
+header{
+	background-color: #558C03;
+	position: sticky;
+	top: 0;
+	z-index: 10;
+}
+
+
+footer{
+	background-color: #558C03;
+	text-align: center;
+}
+
+footer p{
+	font-size: clamp(0.7rem, 0.9vw, 1.5rem);
+	font-weight: 500;
+	color: white;
+	margin-bottom: 0;
+}
+footer a:hover{
+	color: #414141;
+}
+
+main{
+	min-height: 80vh;
+}
+
+nav{
+	font-size: clamp(1rem, 1.3vw, 2rem);
+}
+
+
+.bannersFinais{
+	height: 60vh;
+}
+
+.flex_rodape{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-content: center;
+	align-items: center;
+	color: white;
+	font-weight: 700;
+	font-size: clamp(0.8rem, 1.1vw, 1.5rem);
+	text-align: center;
+}
+
+.links_menu_inicial span{
+	color: rgb(48, 48, 48);
+	font-size: 2.8vh;
+	font-weight: 900;
+}
+
+.links_menu_inicial span:hover{
+	color: rgb(255, 255, 255);
+
+}
+
+a:hover, a:visited, a:active{
+	text-decoration: none;
+}
+
+.navbar .nav-item .dropdown-menu {
+	display: none;
+}
+
+.navbar .nav-item:hover .dropdown-menu {
+	display: block;
+}
+
+.navbar .nav-item .dropdown-menu {
+	margin-top: 0;
+}
+
+h1{
+	font-size: clamp(1.2rem, 6.5vh, 6.5rem);
+	color: #BF2604;
+}
+
+#anuncio_app{
+	font-size: 2.5vh;
+}
+
+
+#form_cadastro{
+	margin-top: 12vh;
+	margin-bottom: 12vh;
+	line-height: 2;
+	padding: 3%;
+}
+
+#img_jogos1{
+	width: 100%;
+}
+
+#input_pesquisa{
+	font-size: 1rem;
+}
+#logo{
+	width: 18vh;
+}
+
+#section_global{
+	background-color: #e5f3f1;
+}
+
+#seta_topo{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	border: none;
+}
+
+#setinha{
+	height: 5vh;
+
+}

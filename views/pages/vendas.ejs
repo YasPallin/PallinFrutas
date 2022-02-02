@@ -1,0 +1,57 @@
+<!-- para incluir o header -->
+<%- include("../partials/header"); %>
+
+	<main class="container-md bg-light mt-3 mb-3">
+		<section class="container" id="principal">
+			<div class="row">
+				<div class="col">
+					<h1 class="text-center">Vendas</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<a href="/cadastrarVenda" class="btn btn-danger"> Inserir nova venda </a>
+				</div>
+			</div>
+
+			<table class="table table-responsive-md table-hover bg-light text-center">
+				<thead class="table">
+					<tr>
+						<th>ID</th>
+						<th>Valor Total R$</th>
+						<th>Cliente</th>
+						<th>Produto</th>
+						<th>Quantidade</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% if (vendasLista=="" ){%>
+						<tr>
+							<td colspan="7" class="alert alert-danger">Não há vendas cadastradas.</td>
+						</tr>
+						<%}else{vendasLista.forEach(function(venda){ %>
+							<tr>
+								<td>
+									<%=venda.id_venda %>
+								</td>
+								<td>
+									<%=venda.valor_venda %>
+								</td>
+								<td>
+									<%=venda.nome_cliente %>
+								</td>
+								<td>
+									<%=venda.desc_prod %>
+								</td>
+								<td>
+									<%=venda.quantidade_venda %>
+								</td>
+							</tr>
+							<% })} %>
+				</tbody>
+			</table>
+			</div>
+			</div>
+		</section>
+		<!-- para incluir o footer -->
+		<%- include("../partials/footer"); %>

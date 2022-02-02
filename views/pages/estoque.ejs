@@ -1,0 +1,64 @@
+<!-- para incluir o header -->
+<%- include("../partials/header"); %>
+
+	<main class="container-md bg-light mt-3 mb-3">
+		<section class="container" id="principal">
+			<div class="row">
+				<div class="col">
+					<div class="row mt-5">
+						<div class="col-12">
+							<h1 class="text-center">Estoque</h1>
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-md-4 mr-auto ml-auto">
+							<form action="/pesquisar" method="GET" class="text-center">
+								<input type="search" name="pesquisa" id="pesquisa" class="form-control">
+								<button type="submit" class="btn btn-success mt-2 mb-2">Pesquisar</button>
+							</form>
+						</div>
+					</div>
+					
+					<table class="table table-responsive-md table-hover bg-light text-center">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Categoria</th>
+								<th>Descrição</th>
+								<th>Valor Unitário</th>
+								<th>Quantidade Mínima</th>
+								<th>Quantidade em Estoque</th>
+								<th colspan="2">Ações</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% if (produtosLista ==""){%>
+								<tr>
+									<td colspan="7" class="alert alert-dark">Não há produtos cadastrados.</td>
+								</tr>
+							<%}else{produtosLista.forEach(function(produto){ %>
+								<% if (produto.quantidade_prod < 100) {%>
+									<tr class="table-danger">
+								<% } else if (produto.categoria_prod == "Frutas"){%>
+									<tr class="table-warning">
+								<% } else if (produto.categoria_prod == "Verduras"){%>
+									<tr class="table-success">
+								<% } else { %>
+									<tr class="table-info">
+								<% } %>
+									<td><%=produto.id_prod %></td>
+									<td><%=produto.categoria_prod %></td>
+									<td><%=produto.desc_prod %></td>
+									<td><%=produto.valor_prod %></td>
+									<td> 100 </td>
+									<td><%=produto.quantidade_prod %></td>
+									<td><a href="/editarProduto/<%=produto.id_prod%>" class="btn btn-warning"> Editar quantidades</a></td>
+								</tr>
+						<%	})} %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+<!-- para incluir o footer -->
+<%- include("../partials/footer"); %>
